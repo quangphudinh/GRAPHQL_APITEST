@@ -22,6 +22,7 @@ app.use("/graphql" , requireAuth); //private route
 const apolloServer = new ApolloServer({
     typeDefs : typeDefs,
     resolvers : resolvers,
+    introspection : true, // Dùng để gợi ý code khi đẩy lên online
     context : ({req}) => {
         return {...req};
     }
